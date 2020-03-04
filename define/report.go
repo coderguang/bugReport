@@ -1,6 +1,9 @@
 package define
 
-import "strconv"
+import (
+	"strconv"
+	"time"
+)
 
 type SReportData struct {
 	Id         int `gorm:"primary_key;AUTO_INCREMENT"`
@@ -11,6 +14,7 @@ type SReportData struct {
 	ErrCode    int
 	Data       string
 	ReportDesc string
+	ReportDt   time.Time
 }
 
 func (data *SReportData) String() string {
@@ -20,6 +24,7 @@ func (data *SReportData) String() string {
 		"\ntoken:" + data.Token +
 		"\ntype:" + strconv.Itoa(data.ReportType) +
 		"\nerrcode:" + strconv.Itoa(data.ErrCode) +
+		"\nreportDt" + data.ReportDt.String() +
 		"\n===========end===========\n\n"
 	return str
 }

@@ -5,6 +5,7 @@ import (
 	"bugReport/define"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/coderguang/GameEngine_go/sglog"
 )
@@ -34,6 +35,7 @@ func logicHandle(w http.ResponseWriter, r *http.Request, flag chan bool) {
 	}
 	data.Data = r.FormValue(define.HTTP_ARGS_ERROR_DATA)
 	data.ReportDesc = r.FormValue(define.HTTP_ARGS_ERROR_DESC)
+	data.ReportDt = time.Now()
 
 	err = db.SaveReportToDb(data)
 	if err != nil {
