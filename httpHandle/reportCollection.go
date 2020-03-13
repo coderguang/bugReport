@@ -22,7 +22,7 @@ func logicHandle(w http.ResponseWriter, r *http.Request, flag chan bool) {
 	data.Platform = r.FormValue(define.HTTP_ARGS_PLATFORM)
 
 	if data.AppName == "" && data.Platform == "" {
-		sglog.Debug("not a valid report,ignore")
+		//sglog.Debug("not a valid report,ignore")
 		return
 	}
 

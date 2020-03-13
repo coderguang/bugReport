@@ -25,6 +25,7 @@ func (data *SReportData) String() string {
 		"\ntype:" + strconv.Itoa(data.ReportType) +
 		"\nerrcode:" + strconv.Itoa(data.ErrCode) +
 		"\nreportDt:" + data.ReportDt.String() +
+		"\nreportDesc:" + data.ReportDesc +
 		"\n===========end===========\n\n"
 	return str
 }
